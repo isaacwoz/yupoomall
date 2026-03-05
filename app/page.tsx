@@ -1222,6 +1222,13 @@ export default function Home() {
         )}
       </AnimatePresence>
 
+      {/* ─── Footer ─── */}
+      {hasResults && (
+        <div className="py-6 text-center text-[10px] text-[var(--text-muted)]">
+          &copy; {new Date().getFullYear()} YupooMall
+        </div>
+      )}
+
       {/* ─── Lightbox ─── */}
       <AnimatePresence>
         {lightboxOpen && lightboxAlbum && (
