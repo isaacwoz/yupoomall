@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #080808;
+  --bg-card: #111111;
+  --bg-card-hover: #181818;
+  --bg-surface: #0e0e0e;
+  --border: #1a1a1a;
+  --border-subtle: #141414;
+  --text: #f0f0f0;
+  --text-secondary: #999999;
+  --text-muted: #555555;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-glow: rgba(59, 130, 246, 0.15);
+  --accent-glow-strong: rgba(59, 130, 246, 0.35);
+  --wishlist: #e84393;
+}
+
+html.light {
+  --bg: #f5f5f5;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafa;
+  --bg-surface: #eeeeee;
+  --border: #e0e0e0;
+  --border-subtle: #eaeaea;
+  --text: #111111;
+  --text-secondary: #555555;
+  --text-muted: #999999;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-glow: rgba(59, 130, 246, 0.1);
+  --accent-glow-strong: rgba(59, 130, 246, 0.25);
+  --wishlist: #e84393;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--border) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+/* Lightbox */
+@keyframes lightbox-in {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.lightbox-container {
+  animation: lightbox-in 0.2s ease;
+}
+
+/* Wishlist sidebar slide-in */
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Focus glow on inputs */
+.input-glow:focus {
+  box-shadow: 0 0 0 1px var(--accent), 0 0 20px var(--accent-glow);
+}
+
+/* Accent border glow on hover */
+.card-glow:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Pointer cursor on interactive elements */
+@layer base {
+  button, [role="button"], a, summary { cursor: pointer; }
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: white;
+}

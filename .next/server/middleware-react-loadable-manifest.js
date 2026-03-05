@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"app/page.tsx -> @/components/Silk\":{\"id\":\"app/page.tsx -> @/components/Silk\",\"files\":[\"static/chunks/_app-pages-browser_components_Silk_tsx.js\"]}}"
